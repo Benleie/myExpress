@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+	
+</head>
+<body>
+	<div id="form-div">
+	    <form id="form1" onsubmit="return false" action="##" method="post">
+	        <p>用户名：<input name="userName" type="text" id="txtUserName" tabindex="1" size="15" value=""/></p>
+	        <p>密　码：<input name="password" type="password" id="TextBox2" tabindex="2" size="16" value=""/></p>
+	        <p><input type="button" value="登录" onclick="login()">&nbsp;<input type="reset" value="重置"></p>
+	    </form>
+	</div>
+	
+	<!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
+	<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.js"></script>
+	<script type="text/javascript">
+		function login(){
+			$.ajax({
+				type: "POST",
+				dataType: 'json',
+				url: '/xhr.html',
+				// data: $("#form1").serialize(),
+				data: { userName: 'sd', password: 'sdsdsd' },
+				success: function(result){
+					console.log(result.responseText);
+
+				},
+				error: function(xhr, errorType, error){
+					console.log(xhr.responseText)
+					console.log(error)
+				}
+
+			})
+		}
+		
+		// JSON.parse('ok post right away');
+		console.log($('#form1').serialize())
+	</script>
+
+</body>
+</html>

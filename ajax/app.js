@@ -22,9 +22,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
 
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    
+    // res.header("Content-Type", "application/json;charset=utf-8");
+    res.header("X-Powered-By",'Express/4.15.2');
+    next();
+});
+
+
+app.use(['/','/\*.html'], index);
+app.use('/users', users);
+// app.use('/xhr.html', index);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

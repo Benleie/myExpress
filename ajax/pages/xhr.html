@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>XMLHttpRequest</title>
+</head>
+<body>
+	<div>a XMLHttpRequest instance</div>
+	<button class="request">request</button>
+	<script type="text/javascript">
+		var request = function(){
+			var xhr = new XMLHttpRequest();
+			var url = 'http://localhost:3000';
+			var string = "I want to stay on your bed!"
+
+			xhr.open('POST',url,true);
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState === XMLHttpRequest.HEADERS_RECEIVED){
+					// console.log(xhr.getResponseHeader("server"))
+					console.log(xhr.getAllResponseHeaders())
+				}
+			}
+			xhr.send(string);
+		}
+
+		var requestBT = document.querySelector('.request');
+		requestBT.onclick = request;
+
+	</script>
+</body>
+</html>
