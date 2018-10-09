@@ -28,7 +28,8 @@ router.get('/xhr.html',function(req, res, next){
 
 router.post('/xhr.html',function(req, res, next){
 	console.log(req.body)
-	res.send('ok post right away');
+	// res.send(JSON.stringify('ok post right away'));
+	res.send(null);
 
 });
 
