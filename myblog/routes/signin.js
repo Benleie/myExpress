@@ -29,7 +29,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
       req.flash('success', '登录成功');
       // 用户信息写入 session
       delete user.password;
-      req.session.user = user;
+      req.session.sessionUser = user;
       // 跳转到主页
       res.redirect('/posts');
     })

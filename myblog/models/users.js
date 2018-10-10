@@ -11,6 +11,13 @@ module.exports = {
       .findOne({ name: name })
       .addCreatedAt()
       .exec();
+  },
+
+  getUserById: function getUserByName(id) {
+    return User
+      .findOne({ _id: id })
+      .addCreatedAt()
+      .exec();
   }
 };
 

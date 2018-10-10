@@ -1,5 +1,12 @@
 <%- include('header') %>
+
+<div class="ui">
+    <p>
+      <span class="tag"><%= user.name %></span>注册于<%= user.created_at %></p>
+</div>
+
 <% posts.forEach(function (post) { %>
   <%- include('components/posts-content', { post: post }) %>
 <% }) %>
+
 <%- include('footer') %>

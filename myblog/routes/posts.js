@@ -7,6 +7,7 @@ var CommentModel = require('../models/comments');
 // GET /posts 所有用户或者特定用户的文章页
 //   eg: GET /posts?author=xxx
 router.get('/', function(req, res, next) {
+  console.log(req.query)
   var author = req.query.author;
 
   PostModel.getPosts(author)
@@ -25,15 +26,19 @@ router.get('/create', checkLogin, function(req, res, next) {
 
 // POST /posts 发表一篇文章
 router.post('/', checkLogin, function(req, res, next) {
+  if(req.fields !== {}) console.log(req.fields);
+  
+
   var author = req.session.user._id;
   var title = req.fields.title;
   var content = req.fields.content;
 
   // 校验参数
   try {
-    if (!title.length) {
+    //title is optional
+    /*if (!title.length) {
       throw new Error('请填写标题');
-    }
+    }*/
     if (!content.length) {
       throw new Error('请填写内容');
     }
@@ -62,6 +67,7 @@ router.post('/', checkLogin, function(req, res, next) {
 
 // GET /posts/:postId 单独一篇的文章页
 router.get('/:postId', function(req, res, next) {
+  console.log(req.params);
   var postId = req.params.postId;
 
   Promise.all([
