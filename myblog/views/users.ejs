@@ -2,7 +2,9 @@
 
 <div class="ui">
     <p>
-      <span class="tag"><%= user.name %></span>注册于<%= user.created_at %></p>
+      <span class="tag"><%= user.name %></span>注册于<%= user.created_at %>
+      <span>访问次数(<%= user.pv %>)</span>
+    </p>
 </div>
 
 <% posts.forEach(function (post) { %>

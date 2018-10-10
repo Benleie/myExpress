@@ -10,14 +10,16 @@ router.get("/:userId", function(req, res, next){
 	var userId = req.params.userId,
 		  user;
 
+  UserModel.incPv(userId)
+      .catch(next);
+      
   UserModel.getUserById(userId)
        .then(function(USER){
           user = USER;
-          console.log(user.name + " router/users");
+          // console.log(user.name + " router/users");
        })
        .catch(next);
-
-  console.log(userId)
+  // console.log(userId)
   
 
 	PostModel.getPosts(userId)

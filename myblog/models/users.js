@@ -13,11 +13,18 @@ module.exports = {
       .exec();
   },
 
-  getUserById: function getUserByName(id) {
+  getUserById: function(id) {
     return User
       .findOne({ _id: id })
       .addCreatedAt()
       .exec();
-  }
+  },
+
+  // 通过user id 给 pv 加 1
+  incPv: function incPv(id) {
+    return User
+      .update({ _id: id }, { $inc: { pv: 1 } })
+      .exec();
+  },
 };
 
