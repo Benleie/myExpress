@@ -1,11 +1,9 @@
-npm start出错，找不到www???
-3000端口被另一个express程序占用了。
+使用generator的方式创建express，修改package.json，使用nodemon
 
-
++ 完成了json的上传，仅仅是知道了app.get()和router.get()应该如何衔接
 ## memo
 ```
-express
-express --hbs
+express --view=ejs generator
 npm install
 npm start
 ```

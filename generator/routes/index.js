@@ -1,9 +1,31 @@
-var express = require('express');
-var router = express.Router();
+// var express = require('express');
+// var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: '中国村' });
-});
 
-module.exports = router;
+
+module.exports = function(app){
+  /* GET home page. */
+  app.get('/', function (req, res, next) {
+    res.render('index', { title: 'Express' });
+  });
+
+  app.use('/api', require('./api'));
+
+  // catch 404 and forward to error handler
+  app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  });
+
+  // error handler
+  app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+  });
+}
