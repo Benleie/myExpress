@@ -1,7 +1,8 @@
-Ê×ÏÈ´ò¿ªÊı¾İ¿â `mongod --dbpath hhh/data/db`
-¿ªÆôserver:`node index.js`
-¼´¿ÉÔÚä¯ÀÀÆ÷Ö¸¶¨¶Ë¿Ú½øĞĞ·ÃÎÊ¡£
 
-×¢£º hhhÎÄ¼ş¼ĞÖĞ´æ·ÅÁËÊı¾İdata/db,ÓÃ»§ÃÜÂëµÈ¡£
+é¦–å…ˆæ‰“å¼€æ•°æ®åº“ `mongod --dbpath hhh/data/db`
+å¼€å¯server:`node index.js`
+å³å¯åœ¨æµè§ˆå™¨æŒ‡å®šç«¯å£è¿›è¡Œè®¿é—®ã€‚
 
-Êı¾İ¿âmyblog°üº¬ËÄ¸öÎÄµµ£ºcomments,posts,sessions,users.
+æ³¨ï¼š hhhæ–‡ä»¶å¤¹ä¸­å­˜æ”¾äº†æ•°æ®data/db,ç”¨æˆ·å¯†ç ç­‰ã€‚
+
+æ•°æ®åº“myblogåŒ…å«å››ä¸ªæ–‡æ¡£ï¼šcomments,posts,sessions,users.
