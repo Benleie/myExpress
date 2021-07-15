@@ -13,3 +13,8 @@ sessions由index.js调用express-session和connect-mongo定义，由routes目录
 + 增添posts-content.ejs,由posts.ejs调用，每个post的内容和标题都是链接
 + 为避免混淆，将session.user更名为session.sessionUser，在EJS中也一一更改
 + 路由中添加users.js,在models/users添加getUserById
+
+
+## 技术栈
++ mongodb
+  + studio 3T for MongoDB
