@@ -14,6 +14,8 @@ sessions由index.js调用express-session和connect-mongo定义，由routes目录
 + 为避免混淆，将session.user更名为session.sessionUser，在EJS中也一一更改
 + 路由中添加users.js,在models/users添加getUserById
 
+## todos && bugs
++ 登录用户无法发表文章 未登录
 
 ## 技术栈
 + mongodb
